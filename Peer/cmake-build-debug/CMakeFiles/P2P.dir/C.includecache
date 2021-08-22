@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/ds_peer.h
+header.h
+/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/header.h
+
+/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/header.h
+netinet/in.h
+-
+stdlib.h
+-
+
+/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/main.c
+peer.h
+/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/peer.h
+stdio.h
+-
+pthread.h
+-
+
+/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/peer.h
+stddef.h
+-
+netinet/in.h
+-
+pthread.h
+-
+header.h
+/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/header.h
+ds_peer.h
+/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/ds_peer.h
+

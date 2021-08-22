@@ -8,13 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/saso/CLionProjects/ContactTracing/P2P-Server/main.c" "/home/saso/CLionProjects/ContactTracing/P2P-Server/cmake-build-debug/CMakeFiles/P2P_server.dir/main.c.o"
-  "/home/saso/CLionProjects/ContactTracing/P2P-Server/server.c" "/home/saso/CLionProjects/ContactTracing/P2P-Server/cmake-build-debug/CMakeFiles/P2P_server.dir/server.c.o"
+  "/home/saso/CLionProjects/ContactTracing/Server/main.c" "/home/saso/CLionProjects/ContactTracing/Server/cmake-build-debug/CMakeFiles/P2P.dir/main.c.o"
+  "/home/saso/CLionProjects/ContactTracing/Server/server.c" "/home/saso/CLionProjects/ContactTracing/Server/cmake-build-debug/CMakeFiles/P2P.dir/server.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  "../."
   )
 
 # The set of dependency files which are needed:

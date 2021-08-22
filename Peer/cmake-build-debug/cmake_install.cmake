@@ -1,4 +1,4 @@
-# Install script for directory: /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P
+# Install script for directory: /home/saso/CLionProjects/ContactTracing/Peer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

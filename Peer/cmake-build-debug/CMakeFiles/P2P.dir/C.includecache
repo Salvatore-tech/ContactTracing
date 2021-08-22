@@ -6,25 +6,53 @@
 
 #IncludeRegexTransform: 
 
-/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/ds_peer.h
-header.h
-/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/header.h
+/home/saso/CLionProjects/ContactTracing/Peer/ds_peer.c
+string.h
+-
+malloc.h
+-
+unistd.h
+-
+ds_peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/ds_peer.h
+peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/peer.h
 
-/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/header.h
+/home/saso/CLionProjects/ContactTracing/Peer/ds_peer.h
+header.h
+/home/saso/CLionProjects/ContactTracing/Peer/header.h
+
+/home/saso/CLionProjects/ContactTracing/Peer/header.h
 netinet/in.h
 -
 stdlib.h
 -
 
-/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/main.c
+/home/saso/CLionProjects/ContactTracing/Peer/main.c
 peer.h
-/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/peer.h
 stdio.h
 -
 pthread.h
 -
 
-/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/peer.c
+peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/peer.h
+stdio.h
+-
+unistd.h
+-
+errno.h
+-
+string.h
+-
+ds_peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/ds_peer.h
+header.h
+/home/saso/CLionProjects/ContactTracing/Peer/header.h
+
+/home/saso/CLionProjects/ContactTracing/Peer/peer.h
 stddef.h
 -
 netinet/in.h
@@ -32,7 +60,7 @@ netinet/in.h
 pthread.h
 -
 header.h
-/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/header.h
+/home/saso/CLionProjects/ContactTracing/Peer/header.h
 ds_peer.h
-/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/ds_peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/ds_peer.h
 

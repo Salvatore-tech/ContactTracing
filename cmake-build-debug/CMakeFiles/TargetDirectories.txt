@@ -1,0 +1,2 @@
+/home/saso/CLionProjects/ContactTracing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/saso/CLionProjects/ContactTracing/cmake-build-debug/CMakeFiles/edit_cache.dir

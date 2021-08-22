@@ -53,10 +53,10 @@ RM = /snap/clion/162/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P
+CMAKE_SOURCE_DIR = /home/saso/CLionProjects/ContactTracing/Peer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug
+CMAKE_BINARY_DIR = /home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/P2P.dir/depend.make
@@ -68,42 +68,42 @@ include CMakeFiles/P2P.dir/flags.make
 
 CMakeFiles/P2P.dir/main.c.o: CMakeFiles/P2P.dir/flags.make
 CMakeFiles/P2P.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/P2P.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/P2P.dir/main.c.o -c /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/P2P.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/P2P.dir/main.c.o -c /home/saso/CLionProjects/ContactTracing/Peer/main.c
 
 CMakeFiles/P2P.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/P2P.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/main.c > CMakeFiles/P2P.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/saso/CLionProjects/ContactTracing/Peer/main.c > CMakeFiles/P2P.dir/main.c.i
 
 CMakeFiles/P2P.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/P2P.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/main.c -o CMakeFiles/P2P.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/saso/CLionProjects/ContactTracing/Peer/main.c -o CMakeFiles/P2P.dir/main.c.s
 
 CMakeFiles/P2P.dir/peer.c.o: CMakeFiles/P2P.dir/flags.make
 CMakeFiles/P2P.dir/peer.c.o: ../peer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/P2P.dir/peer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/P2P.dir/peer.c.o -c /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/peer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/P2P.dir/peer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/P2P.dir/peer.c.o -c /home/saso/CLionProjects/ContactTracing/Peer/peer.c
 
 CMakeFiles/P2P.dir/peer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/P2P.dir/peer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/peer.c > CMakeFiles/P2P.dir/peer.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/saso/CLionProjects/ContactTracing/Peer/peer.c > CMakeFiles/P2P.dir/peer.c.i
 
 CMakeFiles/P2P.dir/peer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/P2P.dir/peer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/peer.c -o CMakeFiles/P2P.dir/peer.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/saso/CLionProjects/ContactTracing/Peer/peer.c -o CMakeFiles/P2P.dir/peer.c.s
 
 CMakeFiles/P2P.dir/ds_peer.c.o: CMakeFiles/P2P.dir/flags.make
 CMakeFiles/P2P.dir/ds_peer.c.o: ../ds_peer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/P2P.dir/ds_peer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/P2P.dir/ds_peer.c.o -c /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/ds_peer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/P2P.dir/ds_peer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/P2P.dir/ds_peer.c.o -c /home/saso/CLionProjects/ContactTracing/Peer/ds_peer.c
 
 CMakeFiles/P2P.dir/ds_peer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/P2P.dir/ds_peer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/ds_peer.c > CMakeFiles/P2P.dir/ds_peer.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/saso/CLionProjects/ContactTracing/Peer/ds_peer.c > CMakeFiles/P2P.dir/ds_peer.c.i
 
 CMakeFiles/P2P.dir/ds_peer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/P2P.dir/ds_peer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/ds_peer.c -o CMakeFiles/P2P.dir/ds_peer.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/saso/CLionProjects/ContactTracing/Peer/ds_peer.c -o CMakeFiles/P2P.dir/ds_peer.c.s
 
 # Object files for target P2P
 P2P_OBJECTS = \
@@ -119,7 +119,7 @@ P2P: CMakeFiles/P2P.dir/peer.c.o
 P2P: CMakeFiles/P2P.dir/ds_peer.c.o
 P2P: CMakeFiles/P2P.dir/build.make
 P2P: CMakeFiles/P2P.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable P2P"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable P2P"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/P2P.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -131,6 +131,6 @@ CMakeFiles/P2P.dir/clean:
 .PHONY : CMakeFiles/P2P.dir/clean
 
 CMakeFiles/P2P.dir/depend:
-	cd /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug /media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/CMakeFiles/P2P.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/saso/CLionProjects/ContactTracing/Peer /home/saso/CLionProjects/ContactTracing/Peer /home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug /home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug /home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/CMakeFiles/P2P.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/P2P.dir/depend
 

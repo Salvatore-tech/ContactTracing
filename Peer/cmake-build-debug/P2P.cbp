@@ -8,95 +8,95 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug"/>
+				<Option working_dir="/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug"/>
+				<Option working_dir="/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug"/>
+				<Option working_dir="/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="P2P">
-				<Option output="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/P2P" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug"/>
+				<Option output="/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/P2P" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/."/>
+					<Add directory="/home/saso/CLionProjects/ContactTracing/Peer/."/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 P2P"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 P2P"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="P2P/fast">
-				<Option output="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/P2P" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug"/>
+				<Option output="/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/P2P" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/."/>
+					<Add directory="/home/saso/CLionProjects/ContactTracing/Peer/."/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 P2P/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 P2P/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/ds_peer.c">
+		<Unit filename="/home/saso/CLionProjects/ContactTracing/Peer/ds_peer.c">
 			<Option target="P2P"/>
 		</Unit>
-		<Unit filename="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/ds_peer.h">
+		<Unit filename="/home/saso/CLionProjects/ContactTracing/Peer/ds_peer.h">
 			<Option target="P2P"/>
 		</Unit>
-		<Unit filename="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/header.h">
+		<Unit filename="/home/saso/CLionProjects/ContactTracing/Peer/header.h">
 			<Option target="P2P"/>
 		</Unit>
-		<Unit filename="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/main.c">
+		<Unit filename="/home/saso/CLionProjects/ContactTracing/Peer/main.c">
 			<Option target="P2P"/>
 		</Unit>
-		<Unit filename="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/peer.c">
+		<Unit filename="/home/saso/CLionProjects/ContactTracing/Peer/peer.c">
 			<Option target="P2P"/>
 		</Unit>
-		<Unit filename="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/peer.h">
+		<Unit filename="/home/saso/CLionProjects/ContactTracing/Peer/peer.h">
 			<Option target="P2P"/>
 		</Unit>
-		<Unit filename="/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/CMakeLists.txt">
+		<Unit filename="/home/saso/CLionProjects/ContactTracing/Peer/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

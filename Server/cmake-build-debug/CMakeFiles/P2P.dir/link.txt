@@ -1,0 +1,1 @@
+/usr/bin/cc  -pthread -g CMakeFiles/P2P.dir/main.c.o CMakeFiles/P2P.dir/server.c.o -o P2P 

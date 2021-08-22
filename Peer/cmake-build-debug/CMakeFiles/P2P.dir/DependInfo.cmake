@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/ds_peer.c" "/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/CMakeFiles/P2P.dir/ds_peer.c.o"
-  "/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/main.c" "/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/CMakeFiles/P2P.dir/main.c.o"
-  "/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/peer.c" "/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/cmake-build-debug/CMakeFiles/P2P.dir/peer.c.o"
+  "/home/saso/CLionProjects/ContactTracing/Peer/ds_peer.c" "/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/CMakeFiles/P2P.dir/ds_peer.c.o"
+  "/home/saso/CLionProjects/ContactTracing/Peer/main.c" "/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/CMakeFiles/P2P.dir/main.c.o"
+  "/home/saso/CLionProjects/ContactTracing/Peer/peer.c" "/home/saso/CLionProjects/ContactTracing/Peer/cmake-build-debug/CMakeFiles/P2P.dir/peer.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

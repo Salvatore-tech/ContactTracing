@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/media/saso/fedora_localhost-live/home/saso/CLionProjects/P2P/.
+C_INCLUDES = -I/home/saso/CLionProjects/ContactTracing/Peer/.
 
 C_FLAGS =  -pthread -g -std=gnu99
 

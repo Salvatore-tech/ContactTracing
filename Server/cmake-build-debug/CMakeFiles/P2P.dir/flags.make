@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = 
+C_INCLUDES = -I/home/saso/CLionProjects/ContactTracing/Server/.
 
-C_FLAGS = -g -std=gnu99
+C_FLAGS =  -pthread -g -std=gnu99
 

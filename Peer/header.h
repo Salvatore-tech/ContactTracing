@@ -45,11 +45,6 @@ typedef struct
     struct sockaddr_in peer_sock_addr;
 } msg_peer_t;
 
-typedef struct{
-    msg_type_t msg;
-    int neigh_no;
-}msg_neigh_t;
-// This struct is used to request the number of neighbours to the server
 typedef struct {
     msg_type_t msg;
     char* id;
@@ -58,6 +53,16 @@ typedef struct {
 typedef struct
 {
     msg_type_t msg;
-    char *ids; // Array of ids
+    char **ids; // Array of ids
 } msg_brd_t;
+
+typedef struct {
+    msg_type_t msg;
+    int noPeer;
+}msg_num_all_t;
+
+typedef struct {
+    msg_type_t msg;
+    msg_peer_t* peerList;
+}msg_list_all_t;
 #endif //UNTITLED1_HEADER_H

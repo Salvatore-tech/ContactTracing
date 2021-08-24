@@ -18,7 +18,9 @@
 #define SRV_PORT 8500
 #define BROAD_PORT 9000
 #define NEIGH_NO 2
-//const char srv_ip_addr[] = "127.0.0.1";
+
+#define ID_LEN 64
+
 typedef int msg_type_t;
 
 typedef struct node{

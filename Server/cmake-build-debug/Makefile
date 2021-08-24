@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named P2P
+# Target rules for targets named P2P_server
 
 # Build rule for target.
-P2P: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 P2P
-.PHONY : P2P
+P2P_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 P2P_server
+.PHONY : P2P_server
 
 # fast build rule for target.
-P2P/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/build
-.PHONY : P2P/fast
+P2P_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P_server.dir/build.make CMakeFiles/P2P_server.dir/build
+.PHONY : P2P_server/fast
 
 main.o: main.c.o
 .PHONY : main.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P_server.dir/build.make CMakeFiles/P2P_server.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -142,7 +142,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P_server.dir/build.make CMakeFiles/P2P_server.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -150,7 +150,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P_server.dir/build.make CMakeFiles/P2P_server.dir/main.c.s
 .PHONY : main.c.s
 
 server.o: server.c.o
@@ -158,7 +158,7 @@ server.o: server.c.o
 
 # target to build an object file
 server.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/server.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P_server.dir/build.make CMakeFiles/P2P_server.dir/server.c.o
 .PHONY : server.c.o
 
 server.i: server.c.i
@@ -166,7 +166,7 @@ server.i: server.c.i
 
 # target to preprocess a source file
 server.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/server.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P_server.dir/build.make CMakeFiles/P2P_server.dir/server.c.i
 .PHONY : server.c.i
 
 server.s: server.c.s
@@ -174,7 +174,7 @@ server.s: server.c.s
 
 # target to generate assembly for a file
 server.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/server.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P_server.dir/build.make CMakeFiles/P2P_server.dir/server.c.s
 .PHONY : server.c.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... P2P"
+	@echo "... P2P_server"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

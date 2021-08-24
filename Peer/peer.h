@@ -18,5 +18,5 @@ void listBroadcast(int *brd_fd, const node_t *head_id, const node_t *tail_id);
 
 void sendBroadcast(char**id);
 void readIncomingMessage(int fd_listener, node_t** tail_id);
-char *generate_id(size_t size);
+void generate_id(size_t size, char* str);
 #endif //UNTITLED1_PEER_H

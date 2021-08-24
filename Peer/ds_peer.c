@@ -10,8 +10,11 @@
 
 void *addNode(){
     node_t *new_node = calloc(1, sizeof(node_t));
-    new_node->id = generate_id(64);
+    new_node->id = malloc(ID_LEN+1);
     new_node->next = NULL;
+
+    generate_id(ID_LEN, new_node->id);
+
     if (!head)
     {
         head = calloc(1, sizeof (node_t));

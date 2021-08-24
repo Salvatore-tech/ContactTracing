@@ -159,7 +159,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Project
+CMAKE_PROJECT_NAME:STATIC=ContactTracing
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -240,6 +240,12 @@ Project_BINARY_DIR:STATIC=/home/saso/CLionProjects/ContactTracing/cmake-build-de
 
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=/home/saso/CLionProjects/ContactTracing
+
+//Value Computed by CMake
+untitled_BINARY_DIR:STATIC=/home/saso/CLionProjects/ContactTracing/cmake-build-debug
+
+//Value Computed by CMake
+untitled_SOURCE_DIR:STATIC=/home/saso/CLionProjects/ContactTracing
 
 
 ########################

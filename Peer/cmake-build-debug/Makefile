@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named P2P
+# Target rules for targets named simple_example
 
 # Build rule for target.
-P2P: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 P2P
-.PHONY : P2P
+simple_example: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_example
+.PHONY : simple_example
 
 # fast build rule for target.
-P2P/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/build
-.PHONY : P2P/fast
+simple_example/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_example.dir/build.make CMakeFiles/simple_example.dir/build
+.PHONY : simple_example/fast
 
 ds_peer.o: ds_peer.c.o
 .PHONY : ds_peer.o
 
 # target to build an object file
 ds_peer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/ds_peer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_example.dir/build.make CMakeFiles/simple_example.dir/ds_peer.c.o
 .PHONY : ds_peer.c.o
 
 ds_peer.i: ds_peer.c.i
@@ -142,7 +142,7 @@ ds_peer.i: ds_peer.c.i
 
 # target to preprocess a source file
 ds_peer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/ds_peer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_example.dir/build.make CMakeFiles/simple_example.dir/ds_peer.c.i
 .PHONY : ds_peer.c.i
 
 ds_peer.s: ds_peer.c.s
@@ -150,7 +150,7 @@ ds_peer.s: ds_peer.c.s
 
 # target to generate assembly for a file
 ds_peer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/ds_peer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_example.dir/build.make CMakeFiles/simple_example.dir/ds_peer.c.s
 .PHONY : ds_peer.c.s
 
 main.o: main.c.o
@@ -158,7 +158,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_example.dir/build.make CMakeFiles/simple_example.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -166,7 +166,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_example.dir/build.make CMakeFiles/simple_example.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -174,7 +174,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_example.dir/build.make CMakeFiles/simple_example.dir/main.c.s
 .PHONY : main.c.s
 
 peer.o: peer.c.o
@@ -182,7 +182,7 @@ peer.o: peer.c.o
 
 # target to build an object file
 peer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/peer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_example.dir/build.make CMakeFiles/simple_example.dir/peer.c.o
 .PHONY : peer.c.o
 
 peer.i: peer.c.i
@@ -190,7 +190,7 @@ peer.i: peer.c.i
 
 # target to preprocess a source file
 peer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/peer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_example.dir/build.make CMakeFiles/simple_example.dir/peer.c.i
 .PHONY : peer.c.i
 
 peer.s: peer.c.s
@@ -198,7 +198,7 @@ peer.s: peer.c.s
 
 # target to generate assembly for a file
 peer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/P2P.dir/build.make CMakeFiles/P2P.dir/peer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_example.dir/build.make CMakeFiles/simple_example.dir/peer.c.s
 .PHONY : peer.c.s
 
 # Help Target
@@ -209,7 +209,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... P2P"
+	@echo "... simple_example"
 	@echo "... ds_peer.o"
 	@echo "... ds_peer.i"
 	@echo "... ds_peer.s"

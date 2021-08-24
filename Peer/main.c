@@ -15,17 +15,15 @@ int main(){
 
     head = tail = NULL;
 
-
+    fd_listener=0;
     enterIntoNetwork(&fd_server, &fd_listener);
     for(int i=0; i<NEIGH_NO; i++)
         requestNeighbour(fd_server, &neighbour_addr[i]);
-*/
+
     addNode();
     char* s = calloc(1, 65 + 1);
     generate_id(65, s);
     writeNeighbourID(s);
-    generate_id(65, s);
-
 
 
 

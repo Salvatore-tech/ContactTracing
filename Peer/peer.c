@@ -36,12 +36,16 @@ int enterIntoNetwork(int *fd_server, int *fd_listener) {
         perror("Read error\n");
         exit(-1);
     }
-    if (send_message.msg == CHK_MSG_UP) {
-        if (socket(AF_INET, SOCK_DGRAM, 0) < 0) {
+    if (recv_message.msg == CHK_MSG_UP) {
+        if ((*fd_listener = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
             perror("Socket error\n");
             exit(-1);
         }
-        if (bind(*fd_listener, (struct sockaddr *) &recv_message.peer_sock_addr, sizeof(recv_message.peer_sock_addr)) <
+        recv_message.peer_sock_addr.sin_family = AF_INET;
+        recv_message.peer_sock_addr.sin_addr.s_addr = INADDR_ANY;
+        recv_message.peer_sock_addr.sin_port = htons(5000);
+
+        if (bind(*fd_listener, (struct sockaddr *) &recv_message.peer_sock_addr, sizeof(struct sockaddr_in)) <
             0) {
             perror("Bind error\n");
             exit(-1);
@@ -50,22 +54,6 @@ int enterIntoNetwork(int *fd_server, int *fd_listener) {
     return 1;
 }
 
-
-// Il peer richiede al server di inviargli un vicino
-void requestNeighbour(int fd_server, struct sockaddr_in *neigh_addr) {
-    msg_peer_t *recv_message;
-    msg_neigh_t send_message;
-    send_message.msg = MSG_GET_NEIGH;
-    if (write(fd_server, &send_message, sizeof(send_message)) < 0) {
-        perror("Write error\n");
-        exit(-1);
-    }
-    if (read(fd_server, &recv_message, sizeof(msg_type_t)) < 0) {
-        perror("Read error\n");
-        exit(-1);
-    }
-    *neigh_addr = recv_message->peer_sock_addr;
-}
 
 char *contactNeighbour(int fd_neighbour, const struct sockaddr_in *neigh_addr, char *my_id, node_t **tail_id) {
     char *neigh_id = malloc(sizeof(my_id));

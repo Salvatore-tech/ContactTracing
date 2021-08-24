@@ -7,13 +7,14 @@
 #include <netinet/in.h>
 #include <stdlib.h>
 #define MSG_UP 2
-#define MSG_CONN 3
-#define ACK_CONN 4
-#define CHK_MSG_UP 5
-#define MSG_ERR 6
+#define CHK_MSG_UP 3
+#define MSG_DOWN 4
+#define MSG_ALL 5
+#define ACK_MSG_ALL 6
 #define MSG_BRD 7
 #define MSG_GET_NEIGH 8
-#define MSG_ALARM 9
+#define MSG_CONN 9
+#define ACK_CONN 10
 
 #define SRV_PORT 8500
 #define BROAD_PORT 9000

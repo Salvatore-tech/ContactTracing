@@ -16,9 +16,6 @@ int main(){
     head = tail = NULL;
 
 
-
-
-/*
     enterIntoNetwork(&fd_server, &fd_listener);
     for(int i=0; i<NEIGH_NO; i++)
         requestNeighbour(fd_server, &neighbour_addr[i]);

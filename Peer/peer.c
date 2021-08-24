@@ -185,5 +185,4 @@ void generate_id(size_t size, char *str) {
             str[n] = '\0';
         }
     }
-    return str;
 }

@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/saso/CLionProjects/ContactTracing/Peer/ds_peer.h
+header.h
+/home/saso/CLionProjects/ContactTracing/Peer/header.h
+
+/home/saso/CLionProjects/ContactTracing/Peer/header.h
+netinet/in.h
+-
+stdlib.h
+-
+
+/home/saso/CLionProjects/ContactTracing/Peer/peer.c
+peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/peer.h
+stdio.h
+-
+unistd.h
+-
+errno.h
+-
+string.h
+-
+ds_peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/ds_peer.h
+header.h
+/home/saso/CLionProjects/ContactTracing/Peer/header.h
+
+/home/saso/CLionProjects/ContactTracing/Peer/peer.h
+stddef.h
+-
+netinet/in.h
+-
+pthread.h
+-
+header.h
+/home/saso/CLionProjects/ContactTracing/Peer/header.h
+ds_peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/ds_peer.h
+

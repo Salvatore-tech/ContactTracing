@@ -38,12 +38,12 @@ typedef struct {
 }msg_list_all_t;
 
 static unsigned int users_count = 0;
-static msg_peer_t* peerList[MAX_USERS] = {0};
+static struct sockaddr_in* peerList[MAX_USERS] = {0};
 
-void handlePacket(int client_fd, struct sockaddr_in* client_addr);
+int handlePacket(int client_fd, struct sockaddr_in* client_addr);
 
 
-msg_peer_t* add_peer_node(const struct sockaddr_in* new_peer_addr);
+struct sockaddr_in* add_peer_node(const struct sockaddr_in* new_peer_addr);
 int check_signal(unsigned int probability);
 void send_signal();
 void getAllPeers(struct sockaddr_in* msg_to_send);

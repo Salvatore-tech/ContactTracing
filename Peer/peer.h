@@ -11,7 +11,7 @@
 #include "ds_peer.h"
 
 
-void enterIntoNetwork(int *fd_server);
+int enterIntoNetwork(int *fd_server);
 void contactNeighbour();
 void listBroadcast(int *brd_fd, const node_t *head_id, const node_t *tail_id);
 

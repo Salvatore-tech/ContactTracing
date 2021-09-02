@@ -8,10 +8,9 @@
 #include <string.h>
 #include <time.h>
 #include <errno.h>
-#include <arpa/inet.h>
 #include "server.h"
 
-int handlePacket(int client_fd, struct sockaddr_in **peerList, struct sockaddr_in *client_addr) {
+int handlePacket(int client_fd, struct sockaddr_in *client_addr) {
     msg_type_t msg;
     msg_peer_t msg_to_send;
     int n;
@@ -32,10 +31,7 @@ int handlePacket(int client_fd, struct sockaddr_in **peerList, struct sockaddr_i
     } else {
         switch (msg) {
             case MSG_UP:
-                peerList[++users_count] = malloc(sizeof(struct sockaddr_in));
-                memcpy(peerList[users_count], client_addr, sizeof(*client_addr));
-                printf("Added peer\t address: %s \t port: %d\n", inet_ntoa(peerList[users_count]->sin_addr),
-                       peerList[users_count]->sin_port);
+                users_count++;
                 msg_to_send.msg = CHK_MSG_UP;
                 msg_to_send.peer_sock_addr = *client_addr;
 
@@ -43,7 +39,6 @@ int handlePacket(int client_fd, struct sockaddr_in **peerList, struct sockaddr_i
                     perror("Failed to send ACK message\n");
                     exit(-1);
                 }
-
                 break;
 
                 // Delete user from the peerList in case of receiving MSG_DOWN
@@ -69,29 +64,25 @@ int handlePacket(int client_fd, struct sockaddr_in **peerList, struct sockaddr_i
 
 //            getAllPeers(peerListToSend);
 
-                int n = users_count * sizeof(peerList[1]);
-//                memcpy(&peerListToSend, peerList[1], n);
-
-                struct sockaddr_in buff[users_count];
-                memcpy(&buff, &peerList[1], n);
-/*                for (int i = 1; i <= users_count; i++)
-                    memcpy(&buff[i - 1], peerList[i], sizeof(peerList[i]));*/
+                int n = users_count * sizeof(struct sockaddr_in);
+                memcpy(peerListToSend, &peerList[1], n);
 
 
-                if (write(client_fd, buff, sizeof(buff)) < 0) {
+                if (write(client_fd, peerListToSend, n) < 0) {
                     perror("Failed to send ACK_MSG_ALL message\n");
                     exit(-1);
                 }
-            }
+
                 break;
 
-            default: {
-                printf("Error! The client has sent an uknown type of packet\n");
-            }
+                default: {
+                    printf("Error! The client has sent an uknown type of packet\n");
+                }
                 break;
 
+            }
+                //close(client_fd);
         }
-        //close(client_fd);
     }
     return 1;
 
@@ -134,8 +125,8 @@ void send_signal() {
         exit(1);
     }
     peer_addr.sin_family = AF_INET;
-/*    peer_addr.sin_addr = peerList[rnd]->sin_addr;
-    peer_addr.sin_port = peerList[rnd]->sin_port;*/
+    peer_addr.sin_addr = peerList[rnd]->sin_addr;
+    peer_addr.sin_port = peerList[rnd]->sin_port;
     if (sendto(sockfd, pck, sizeof(pck), 0, (struct sockaddr *) &peer_addr, sizeof(peer_addr)) < 0) {
         perror("Sendto error when sending alarm message\n");
         exit(-1);

@@ -17,27 +17,27 @@
 #include <errno.h>
 
 
+// JACK:
+// split main() and other function in different files
 int main() {
     int list_fd, client_fd, enable_reuse = 1, maxi = 0;
     int n_fd_ready;
     int conn_sd = 0;
-    int i = 0;
+    socklen_t len, i = 0;
     int j = 1;
     const int timeout = 500;
     struct sockaddr_in serv_sockaddr, client_sockaddr;
-    socklen_t len = sizeof (client_sockaddr);
     struct pollfd client_poll_struct[MAX_USERS];
 
-    struct sockaddr_in addr_buff[MAX_USERS] = {0};
-//    struct sockaddr_in *peerList[MAX_USERS] = {0};
 
-    if ((list_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+    list_fd = socket(AF_INET, SOCK_STREAM, 0); //SOCK stream used for TCP Connections
+    if (list_fd == -1) {
         perror("Could not create socket\n");
         exit(-1);
-    };
-    memset((char *)&serv_sockaddr, 0, sizeof(serv_sockaddr));
+    }
+
     serv_sockaddr.sin_family = AF_INET;
-    serv_sockaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    serv_sockaddr.sin_addr.s_addr = INADDR_ANY;
     serv_sockaddr.sin_port = htons(SRV_PORT);
 
     if (setsockopt(list_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &enable_reuse, sizeof(int)) < 0)
@@ -70,7 +70,9 @@ int main() {
                     client_poll_struct[i].fd = conn_sd;
                     client_poll_struct[i].events = POLLRDNORM;
 
-                    addr_buff[i] = client_sockaddr;
+//                    client_sockaddr.sin_family=AF_INET;
+                    peerList[i] = malloc(sizeof (struct sockaddr_in));
+                    memcpy(peerList[i], &client_sockaddr, sizeof (client_sockaddr));
                     break;
                 }
             if (i == MAX_USERS)
@@ -82,7 +84,7 @@ int main() {
         }
         for (int j = 1; j <= maxi; j++) {
             if (client_poll_struct[j].fd && client_poll_struct[j].revents & (POLLERR | POLLRDNORM)) {
-                if (handlePacket(client_poll_struct[j].fd, peerList, &addr_buff[j]) < 0)
+                if (handlePacket(client_poll_struct[j].fd, peerList[j]) < 0)
                     client_poll_struct[j].fd = -1;
 //                close(client_poll_struct[j].fd);
                 if (check_signal(5))

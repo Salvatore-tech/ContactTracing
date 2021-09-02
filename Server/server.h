@@ -38,8 +38,9 @@ typedef struct {
 }msg_list_all_t;
 
 static unsigned int users_count = 0;
+static struct sockaddr_in* peerList[MAX_USERS] = {0};
 
-int handlePacket(int client_fd, struct sockaddr_in** peerList, struct sockaddr_in* client_addr);
+int handlePacket(int client_fd, struct sockaddr_in* client_addr);
 
 
 struct sockaddr_in* add_peer_node(const struct sockaddr_in* new_peer_addr);

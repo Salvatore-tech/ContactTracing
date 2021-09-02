@@ -16,13 +16,25 @@ netinet/in.h
 stdlib.h
 -
 
-/home/saso/CLionProjects/ContactTracing/Peer/main.c
-peer.h
-/home/saso/CLionProjects/ContactTracing/Peer/peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/peer.c
 stdio.h
+-
+unistd.h
+-
+errno.h
+-
+string.h
+-
+arpa/inet.h
 -
 pthread.h
 -
+header.h
+/home/saso/CLionProjects/ContactTracing/Peer/header.h
+peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/peer.h
+ds_peer.h
+/home/saso/CLionProjects/ContactTracing/Peer/ds_peer.h
 
 /home/saso/CLionProjects/ContactTracing/Peer/peer.h
 stddef.h

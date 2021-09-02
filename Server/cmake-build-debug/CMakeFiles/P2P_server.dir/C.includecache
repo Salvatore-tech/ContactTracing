@@ -19,6 +19,8 @@ time.h
 -
 errno.h
 -
+arpa/inet.h
+-
 server.h
 /home/saso/CLionProjects/ContactTracing/Server/server.h
 

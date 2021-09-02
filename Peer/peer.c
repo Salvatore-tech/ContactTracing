@@ -12,25 +12,25 @@
 #include "peer.h"
 #include "ds_peer.h"
 
-int enterIntoNetwork(int *fd_server) {
+void enterIntoNetwork(int *fd_server) {
     struct sockaddr_in serv_addr;
     msg_type_t send_message;
     msg_peer_t recv_message;
     send_message = MSG_UP;
-    *fd_server = socket(AF_INET, SOCK_STREAM, 0);
-    if (*fd_server == -1) {
+
+    if ((*fd_server = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         perror("Could not create socket, there is something wrong with your system");
         exit(-1);
     }
+    memset((char *)&serv_addr, 0, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
-    serv_addr.sin_addr.s_addr = INADDR_ANY;
+    serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
     serv_addr.sin_port = htons(SRV_PORT); //port num defined in chat.h
-    socklen_t len = sizeof(serv_addr);
-    if (connect(*fd_server, (struct sockaddr *) &serv_addr, len) < 0) {
+
+    if (connect(*fd_server, (struct sockaddr *) &serv_addr, sizeof (serv_addr)) < 0) {
         perror("Connect to server failed\n");
         exit(-1);
     }
-
 
 
     if (write(*fd_server, &send_message, sizeof(send_message)) < 0) {
@@ -47,8 +47,8 @@ int enterIntoNetwork(int *fd_server) {
         pthread_t ntid;
 
         pthread_attr_init(&attr);
-        pthread_attr_setdetachstate(&attr,PTHREAD_CREATE_DETACHED);
-        pthread_create(&ntid, &attr, recvId, (void*)&recv_message.peer_sock_addr);
+        pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+        pthread_create(&ntid, &attr, recvId, (void *) &recv_message.peer_sock_addr);
 
 
 
@@ -63,7 +63,6 @@ int enterIntoNetwork(int *fd_server) {
 void contactNeighbour() {
     msg_type_t msg_request_list = MSG_ALL;
     msg_num_all_t msgNumAll;
-    struct sockaddr_in *msg_peer_to_recv;
 
 
     node_t *tail_cpy = tail;
@@ -95,8 +94,8 @@ void contactNeighbour() {
     if (msgNumAll.msg == ACK_MSG_ALL) {
 
         int n;
-        if ((n= msgNumAll.noPeer * sizeof(struct sockaddr_in)) > 0){
-            msg_peer_to_recv = malloc(n);
+        if ((n = msgNumAll.noPeer * sizeof(struct sockaddr_in)) > 0) {
+            struct sockaddr_in msg_peer_to_recv[msgNumAll.noPeer];
             if (read(fd_server, msg_peer_to_recv, n) < 0) {
                 perror("Read error\n");
                 exit(-1);
@@ -114,8 +113,7 @@ void contactNeighbour() {
                 scanf("%d", &input);
             }
             sendId(&msg_peer_to_recv[input]);
-        }
-        else
+        } else
             perror("None into the network, can't communicate!\n");
     }
 }
@@ -160,7 +158,7 @@ void *recvId(void *args) {
         exit(-1);
     }
 
-    if (bind(fd_listener, (struct sockaddr *) &addr, sizeof (addr)) < 0) {
+    if (bind(fd_listener, (struct sockaddr *) &addr, sizeof(addr)) < 0) {
         perror("Bind error\n");
         exit(-1);
     }
@@ -172,7 +170,7 @@ void *recvId(void *args) {
 
     while (1) {
 
-        if (recvfrom(fd_listener, &msg_to_rcv, sizeof(msg_to_rcv), 0, (struct sockaddr*)&senderAddr, &len) < 0) {
+        if (recvfrom(fd_listener, &msg_to_rcv, sizeof(msg_to_rcv), 0, (struct sockaddr *) &senderAddr, &len) < 0) {
             perror("Error receiving the message\n");
             exit(-1);
         }
@@ -182,8 +180,8 @@ void *recvId(void *args) {
             writeNeighbourID(msg_to_rcv.id);
 
 
-
-            if (sendto(fd_listener, &msg_to_send, sizeof(msg_to_send), 0, (struct sockaddr *)&senderAddr, sizeof (senderAddr)< 0)) {
+            if (sendto(fd_listener, &msg_to_send, sizeof(msg_to_send), 0, (struct sockaddr *) &senderAddr,
+                       sizeof(senderAddr) < 0)) {
                 printf("%s", strerror(errno));
                 perror("Sendto error\n");
 

@@ -1,1 +1,0 @@
-/usr/bin/cc  -pthread -g CMakeFiles/simple_example.dir/main.c.o CMakeFiles/simple_example.dir/peer.c.o CMakeFiles/simple_example.dir/ds_peer.c.o -o simple_example 

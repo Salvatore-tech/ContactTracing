@@ -1,0 +1,1 @@
+/usr/bin/cc  -pthread -g CMakeFiles/NewPeer.dir/main.c.o CMakeFiles/NewPeer.dir/peer.c.o CMakeFiles/NewPeer.dir/ds_peer.c.o -o NewPeer 

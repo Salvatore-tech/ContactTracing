@@ -1,0 +1,22 @@
+
+R	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(¥œı±üÿÿÿÿ
+M	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(”­¥ú
+M	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(½Ö¯Ú
+M	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(ÁĞñ¨
+M	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(õ¢²¡
+R	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(ÖÔğ¤ûÿÿÿÿ
+M	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(ÎùÛ£
+R	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(×–˜ùÿÿÿÿ
+2	cpp:S1481"unused variable 'users_count'(ç±îú
+/	cpp:S1481"unused variable 'peerList'(Øÿ„
+5	cpp:S1481" unused variable 'positivityAddr'(¬º®Ï
+U	cpp:S5416";"using" should be preferred to "typedef" for type aliasing.(–Ÿ¡ùÿÿÿÿ
+6	cpp:S5421"!Global variables should be const.(ç±îú
+R	cpp:S5945"=Use "std::array" or "std::vector" instead of a C-style array.(Øÿ„
+6	cpp:S5421"!Global variables should be const.(Øÿ„
+R	cpp:S5945"=Use "std::array" or "std::vector" instead of a C-style array.(¬º®Ï
+6	cpp:S5421"!Global variables should be const.(¬º®Ï
+W	cpp:S5945"=Use "std::array" or "std::vector" instead of a C-style array.(°ï§Îøÿÿÿÿ
+;	cpp:S5421"!Global variables should be const.(°ï§Îøÿÿÿÿ
+U	cpp:S5416 ";"using" should be preferred to "typedef" for type aliasing.(Òº¾“üÿÿÿÿ
+U	cpp:S5416&";"using" should be preferred to "typedef" for type aliasing.(Òº¾“üÿÿÿÿ

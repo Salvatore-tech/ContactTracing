@@ -6,21 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/saso/CLionProjects/NewServer/main.c
-stdio.h
+/home/saso/CLionProjects/NewServer/server.c
+unistd.h
 -
-netinet/in.h
+resolv.h
 -
 stdlib.h
 -
-poll.h
+errno.h
 -
 arpa/inet.h
+-
+pthread.h
 -
 server.h
 /home/saso/CLionProjects/NewServer/server.h
 
 /home/saso/CLionProjects/NewServer/server.h
 netinet/in.h
+-
+poll.h
 -
 

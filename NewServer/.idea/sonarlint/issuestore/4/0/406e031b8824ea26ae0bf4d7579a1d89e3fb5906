@@ -1,0 +1,8 @@
+
+gc:S3776	"TRefactor this function to reduce its Cognitive Complexity from 33 to the 25 allowed.(Ôˆ™“
+_c:S134%"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ÿ°öÜ
+_c:S1347"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ñÝˆø
+[c:SingleDeclarationPerStatement
+"0Define each identifier in a dedicated statement.(ÁçÏ¡
+[c:SingleDeclarationPerStatement"0Define each identifier in a dedicated statement.(ÐæÖ®
+Dc:S10667"1Merge this "if" statement with the enclosing one.(ñÝˆø

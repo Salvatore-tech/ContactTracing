@@ -6,46 +6,50 @@
 #define NEWSERVER_SERVER_H
 
 #include <netinet/in.h>
+#include <poll.h>
+
 
 #define MSG_UP 2
-#define CHK_MSG_UP 3
-#define MSG_DOWN 4
+#define ACK_MSG_UP 3
 #define MSG_ALL 5
 #define ACK_MSG_ALL 6
 
-#define MSG_ERR 6
-#define MSG_BRD 7
-#define MSG_GET_NEIGH 8
-#define MSG_ALARM 9
-#define LENGHT_NAME 30
+#define MSG_POS 11
+
 #define MAX_USERS 50
 #define SRV_PORT 8500
 
+#define TIMEOUT 500
+
 typedef int msg_type_t;
-static const char *ip_str = "127.0.0.1";
+static unsigned int users_count = 0;
+static const unsigned int periodPositive = 60;
 
+static struct sockaddr_in peerList[MAX_USERS];
+static struct sockaddr_in positivityAddr[MAX_USERS];
+extern struct pollfd client_poll_struct[MAX_USERS];
 
-typedef struct
-{
+typedef struct {
     msg_type_t msg; // = MSG_PEER
-    struct sockaddr_in peer_sock_addr;
+    struct sockaddr_in peerAddr;
+    struct sockaddr_in positivityAddr;
 } msg_peer_t;
 
 typedef struct {
     msg_type_t msg;
-    int noPeer;
-}msg_num_all_t;
+    unsigned int noPeer;
+} msg_num_all_t;
 
+int buildSocket(int enable_reuse, struct sockaddr_in *servSockaddr);
 
-static unsigned int users_count = 0;
-extern struct sockaddr_in peerList[MAX_USERS];
+void initPollStruct(int list_sd);
+
+int launchDetachThreadToSignalPositivePeer();
 
 int handlePacket(int client_fd);
 
+ssize_t fullWrite(int fd, const void *buf, size_t count);
 
-struct sockaddr_in* add_peer_node(const struct sockaddr_in* new_peer_addr);
-int check_signal(unsigned int probability);
-void send_signal();
-void getAllPeers(struct sockaddr_in* msg_to_send);
+void *signalPositive();
 
 #endif //NEWSERVER_SERVER_H

@@ -5,50 +5,113 @@
 #include <unistd.h>
 #include <resolv.h>
 #include <stdlib.h>
-#include <string.h>
 #include <errno.h>
 #include <arpa/inet.h>
+#include <pthread.h>
 #include "server.h"
 
+ssize_t fullWrite(int fd, const void *buf, size_t count) {
+    size_t nleft;
+    ssize_t nwritten;
+    nleft = count;
+    while (nleft > 0) {             /* repeat until no left */
+        if ((nwritten = write(fd, buf, nleft)) < 0) {
+            if (errno == EINTR)
+                continue;
+            else
+                exit(nwritten);
+        }
+        nleft -= nwritten;
+        buf += nwritten;
+    }
+    return nleft;
+}
+
+int buildSocket(int enable_reuse, struct sockaddr_in *servSockaddr) {
+    int list_sd;
+
+    (*servSockaddr).sin_family = AF_INET;
+    (*servSockaddr).sin_addr.s_addr = htonl(INADDR_ANY);
+    (*servSockaddr).sin_port = htons(SRV_PORT);
+
+    if ((list_sd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+        perror("Could not create socket\n");
+        exit(-1);
+    }
+
+    if (setsockopt(list_sd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, (void *) &enable_reuse, sizeof(enable_reuse)) < 0)
+        perror("Setsockopt (SO_REUSEADDR) failed");
+
+    if (bind(list_sd, (struct sockaddr *) servSockaddr, sizeof((*servSockaddr))) < 0) {
+        perror("Bind error\n");
+        exit(-1);
+    }
+
+    if (listen(list_sd, MAX_USERS) == -1) {
+        perror("Listen error\n");
+        exit(-1);
+    }
+
+    return list_sd;
+}
+
+void initPollStruct(int list_sd) {
+    for (int i = 0; i < MAX_USERS; i++)
+        client_poll_struct[i].fd = -1;
+
+    client_poll_struct[0].fd = list_sd;
+    client_poll_struct[0].events = POLLRDNORM;
+}
+
+int launchDetachThreadToSignalPositivePeer() {
+    pthread_t ntid;
+    pthread_attr_t attr;
+    pthread_attr_init(&attr);
+    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+    return pthread_create(&ntid, &attr, signalPositive, NULL);
+}
 
 int handlePacket(int client_fd) {
     msg_type_t msg;
-    msg_peer_t msg_to_send;
-    struct sockaddr_in peerListusers_count;
-    socklen_t addr_len = sizeof (struct sockaddr_in);
-    int n;
+    ssize_t n;
 
-    int port_to_bind;
     if ((n = read(client_fd, (void *) &msg, sizeof(msg_type_t))) == -1) {
-        /* connection reset by client */
         if (errno == ECONNRESET) {
-            printf("Client aborted connection\n");
+            perror("Client aborted connection\n");
             close(client_fd);
+            --users_count;
         } else
             perror("Read error\n");
         return -1;
+
     } else if (n == 0) {
-        /* connection closed by client */
-        printf("Client closed connection\n");
+        perror("Client closed connection\n");
         close(client_fd);
-        users_count-=1;
+        --users_count;
         return -1;
     } else {
         switch (msg) {
 
             case MSG_UP: {
+                msg_peer_t msg_to_send;
+
                 peerList[users_count].sin_family = AF_INET;
                 peerList[users_count].sin_addr.s_addr = htonl(INADDR_LOOPBACK);
-                peerList[users_count].sin_port = htons(2000+users_count+1);
+                peerList[users_count].sin_port = htons(2000 + rand() % 8000); // [2000; 9999] TODO: randomness
 
-                msg_to_send.msg = CHK_MSG_UP;
-                msg_to_send.peer_sock_addr = peerList[users_count];
-
-                printf("Peer\t address: %s \t port: %d\n", inet_ntoa(peerList[users_count].sin_addr),
+                printf("Peer entered into the network: %s \t %d\n", inet_ntoa(peerList[users_count].sin_addr),
                        ntohs(peerList[users_count].sin_port));
 
-                if (write(client_fd, &msg_to_send, sizeof(msg_to_send)) < 0) {
-                    perror("Failed to send ACK message\n");
+                positivityAddr[users_count].sin_family = AF_INET;
+                positivityAddr[users_count].sin_addr.s_addr = htonl(INADDR_LOOPBACK);
+                positivityAddr[users_count].sin_port = htons(10000 + rand() % 2000);
+
+                msg_to_send.msg = ACK_MSG_UP;
+                msg_to_send.peerAddr = peerList[users_count];
+                msg_to_send.positivityAddr = positivityAddr[users_count];
+
+                if (fullWrite(client_fd, &msg_to_send, sizeof(msg_to_send)) != 0) {
+                    perror("FullWrite error in sending ACK_MSG_UP\n");
                     exit(-1);
                 }
 
@@ -56,33 +119,17 @@ int handlePacket(int client_fd) {
                 break;
             }
 
-
-                // Delete user from the peerList in case of receiving MSG_DOWN
-//            case MSG_DOWN: {
-//                for (int i = 0; i < MAX_USERS; i++) {
-//                    if (&peerList[i] && memcmp((void *) &peerList[i], (void *) client_addr, sizeof(client_addr)) == 0) {
-//                        // free(peerList[i]);
-//                        //peerList[i].peer_sock_addr;
-//                        users_count--;
-//                    }
-//                }
-//            }
-//                break;
             case MSG_ALL: {
                 msg_num_all_t msgNumAll;
-                struct sockaddr_in buff[users_count];
                 msgNumAll.msg = ACK_MSG_ALL;
                 msgNumAll.noPeer = users_count;
 
-                if (write(client_fd, &msgNumAll, sizeof(msgNumAll)) < 0) {
+                if (fullWrite(client_fd, &msgNumAll, sizeof(msgNumAll)) != 0) {
                     perror("Failed to send ACK_MSG_ALL message\n");
                     exit(-1);
                 }
 
-//                for (int i = 1; i <= users_count; i++)
-//                    memcpy(&buff[i - 1], peerList[i], sizeof(peerList[i]));
-
-                if (write(client_fd, peerList, users_count*sizeof (peerList[0])) < 0) {
+                if (fullWrite(client_fd, peerList, users_count * sizeof(peerList[0])) != 0) {
                     perror("Failed to send ACK_MSG_ALL message\n");
                     exit(-1);
                 }
@@ -90,38 +137,36 @@ int handlePacket(int client_fd) {
                 break;
 
             default: {
-                printf("Error! The client has sent an uknown type of packet\n");
+                printf("Error! The client has sent an unknown type of packet\n");
             }
                 break;
-
         }
-        //close(client_fd);
     }
     return 1;
-
 }
 
-int check_signal(unsigned int probability) {
-    return ((rand() % 100) + 1 <= probability) ? 1 : 0;
-}
 
-void send_signal() {
-    if (users_count == 0)
+void *signalPositive() {
+    int sock_fd;
+    msg_type_t msgToSend = MSG_POS;
+
+    if ((sock_fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+        perror("socket");
         exit(-1);
-    int rnd = rand() % users_count + 1;
-    int sockfd;
-    // JACK:
-    void *pck;
-    struct sockaddr_in peer_addr;
-    if ((sockfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) < 0) {
-        fprintf(stderr, "socket error\n");
-        exit(1);
     }
-    peer_addr.sin_family = AF_INET;
-/*    peer_addr.sin_addr = peerList[rnd]->sin_addr;
-    peer_addr.sin_port = peerList[rnd]->sin_port;*/
-    if (sendto(sockfd, pck, sizeof(pck), 0, (struct sockaddr *) &peer_addr, sizeof(peer_addr)) < 0) {
-        perror("Sendto error when sending alarm message\n");
-        exit(-1);
+
+    while (1) {
+        sleep(periodPositive);
+        if (users_count >= 1) {
+            //TODO
+            unsigned int i; //= rand() % users_count;
+            i = 0;
+            struct sockaddr_in temp = positivityAddr[i];
+
+            if (sendto(sock_fd, &msgToSend, sizeof(msgToSend), 0, (struct sockaddr *) &temp, sizeof(temp)) < 0) {
+                perror("Sendto error when sending positivity message\n");
+                exit(-1);
+            }
+        }
     }
 }

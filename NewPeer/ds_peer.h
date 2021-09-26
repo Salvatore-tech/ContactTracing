@@ -4,11 +4,22 @@
 
 #ifndef NEWPEER_DS_PEER_H
 #define NEWPEER_DS_PEER_H
-#include "header.h"
-void *addNode();
+
+#define NODE_SIZE 88
+
+static const unsigned int generatingIdPeriod = 60;
+
+_Noreturn void *addNode();
+
+void deleteNodeList();
+
 void writeNeighbourID(char *neigh_id);
-int searchNeighbourInNode(char **a_neighs, char *target_id);
-int searchNeighbour(char* target_id);
+
+int searchNeighbour(char *target_id, const struct sockaddr_in *previousSender, struct sockaddr_in *positiveSender,
+                    int *toSkip);
+
 void printList();
-void printMyId(node_t* head);
+
+int printMyId();
+
 #endif //NEWPEER_DS_PEER_H

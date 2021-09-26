@@ -1,0 +1,31 @@
+
+kc:S5276"Limplicit conversion loses integer precision: 'ssize_t' (aka 'long') to 'int'(ĞßÕÃûÿÿÿÿ8£õ§ÌÁ/
+kc:S5276)"Limplicit conversion loses integer precision: 'ssize_t' (aka 'long') to 'int'(ıØ˜ıÿÿÿÿ8£õ§ÌÁ/
+qc:S859>"Scast from 'const struct sockaddr_in *' to 'struct sockaddr *' drops const qualifier(”£§Áûÿÿÿÿ8£õ§ÌÁ/
+\c:S935f">non-void function does not return a value in all control paths(æÀö€øÿÿÿÿ8ºîáÌÁ/
+®c:S5278‰"'memcmp' call operates on objects of type 'const struct sockaddr_in' while the size is based on a different type 'const struct sockaddr_in *'(®¦‡Šúÿÿÿÿ8¥õ§ÌÁ/
+mc:S859®"Scast from 'const struct sockaddr_in *' to 'struct sockaddr *' drops const qualifier(²Ï‘8¥õ§ÌÁ/
+lc:S5276‚"Limplicit conversion loses integer precision: 'ssize_t' (aka 'long') to 'int'(ê÷üÿÿÿÿ8ÕˆµÌÁ/
+]c:S935˜">non-void function does not return a value in all control paths(æÀö€øÿÿÿÿ8ÀîáÌÁ/
+:c:S1110/"!Remove these useless parentheses.(¨¶İ98¬õ§ÌÁ/
+Kc:S1066;"1Merge this "if" statement with the enclosing one.(ñºˆ¤8­õ§ÌÁ/
+Dc:S5955ˆ")Declare the variable "i" inside the loop.(à®©8°õ§ÌÁ/
+lc:S134‰"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(®¦‡Šúÿÿÿÿ8°õ§ÌÁ/
+rc:S5000‰"RCompare member by member to check object equality, "sockaddr_in" contains padding.(®¦‡Šúÿÿÿÿ8±õ§ÌÁ/
+hc:SingleDeclarationPerStatement¤"0Define each identifier in a dedicated statement.(áµƒøÿÿÿÿ8³õ§ÌÁ/
+cc:SingleDeclarationPerStatementÁ"0Define each identifier in a dedicated statement.(¤ô€Ñ8¶õ§ÌÁ/
+gc:S134"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ìÇÜ•8·õ§ÌÁ/
+lc:S134‘"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ü†”Ÿıÿÿÿÿ8·õ§ÌÁ/
+cc:SingleDeclarationPerStatementê"0Define each identifier in a dedicated statement.(¯Ãğø8üˆµÌÁ/
+bc:SingleDeclarationPerStatementï"0Define each identifier in a dedicated statement.(¬„ÎY8·õ§ÌÁ/
+yc:SingleGotoOrBreakPerIteration"FReduce the number of nested "break" statements from 2 to 1 authorized.(”õÑ8·õ§ÌÁ/
+;c:S1905ù"Remove this redundant cast.(¨·€šùÿÿÿÿ8·õ§ÌÁ/
+€c:NonReentrantFunctionŠ"QReplace this call to the non reentrant function "strtok" by a call to "strtok_r".(ÓÓåßùÿÿÿÿ8¹õ§ÌÁ/
+lc:S134½"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(¦İªúıÿÿÿÿ8ºõ§ÌÁ/
+cc:SingleDeclarationPerStatement›"0Define each identifier in a dedicated statement.(ë Ì×8ºõ§ÌÁ/
+hc:SingleDeclarationPerStatementŸ"0Define each identifier in a dedicated statement.(ßÒ“´øÿÿÿÿ8ºõ§ÌÁ/
+6c:S1905§"Remove this redundant cast.(ûä¢•8ºõ§ÌÁ/
+wc:S5350½"WMake the type of this variable a pointer-to-const. The current type of "p" is "char *".(¦İªúıÿÿÿÿ8¼õ§ÌÁ/
+€c:NonReentrantFunction½"QReplace this call to the non reentrant function "strtok" by a call to "strtok_r".(¦İªúıÿÿÿÿ8½õ§ÌÁ/
+€c:NonReentrantFunction½"QReplace this call to the non reentrant function "strtok" by a call to "strtok_r".(¦İªúıÿÿÿÿ8½õ§ÌÁ/
+c:S1854‚"oAlthough the value stored to 'z' is used in the enclosing expression, the value is never actually read from 'z'(ê÷üÿÿÿÿ8½˜µÌÁ/

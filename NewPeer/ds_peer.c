@@ -3,87 +3,113 @@
 //
 #include <string.h>
 #include <malloc.h>
+#include <unistd.h>
 #include "peer.h"
 #include "ds_peer.h"
 
-int neigh_count = 0;
 
-void *addNode() {
-    node_t *new_node = calloc(1, sizeof(node_t));
-    new_node->id = malloc(sizeof(char) * (ID_LEN + 1));
-    new_node->neigh_ids = calloc(1, sizeof (char*));
-    new_node->next = NULL;
+_Noreturn void *addNode() {
+    while(1){
+        node_t *new_node = malloc(NODE_SIZE);
 
-    generate_id(ID_LEN, new_node->id);
+        if (new_node) {
+            generate_id(ID_LEN, new_node->id);
+            new_node->no_cont = 0;
+            new_node->neigh_ids = malloc(0); // Needs to be !NULL, because a realloc will be performed on it
+            new_node->next = NULL;
 
-    if (!head) {
-        head = calloc(1, sizeof(node_t));
-        tail = calloc(1, sizeof(node_t));
-        head = tail = new_node;
-        tail->next = NULL;
-    } else {
-        tail->next = new_node;
-        tail = new_node;
+            if (!head) {
+                head = calloc(1, sizeof(node_t));
+                tail = calloc(1, sizeof(node_t));
+                head = tail = new_node;
+                tail->next = NULL;
+            } else {
+                tail->next = new_node;
+                tail = new_node;
+            }
+        }
+
+        sleep(generatingIdPeriod);
     }
-    //    sleep(2);
-    //    addNode();
+}
+
+
+void deleteNodeList() {
+    node_t *current = head;
+    node_t *next = NULL;
+
+    while (current != NULL) {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+
+    head = NULL;
 }
 
 void writeNeighbourID(char *neigh_id) {
+    tail->no_cont++;
+    tail->neigh_ids = realloc(tail->neigh_ids, tail->no_cont * ID_LEN);
     strcat(tail->neigh_ids, neigh_id);
 }
 
+// Confronta il target_id con i nostri id. Appena trova un match, imposta toSkip = 1, in modo che le successive chiamate evitino inutili confronti (già sappiamo di essere stati in contatto con il positivo)
+int searchNeighbour(char *target_id, const struct sockaddr_in *previousSender, struct sockaddr_in *positiveSender,
+                    int *toSkip) {
 
-int searchNeighbour(char *target_id) {
-    for (node_t *iter = head; iter != NULL; iter = iter->next) {
-        char *s = strtok(iter->id, "_");
-        while (s != NULL) {
-            strtok(s, "_");
-            if ((memcmp(s, target_id, ID_LEN) == 0))
-                return 1;
-            s = strtok(0, "_");
-        }
-
+    if (memcmp(previousSender, positiveSender, sizeof(struct sockaddr_in)) == 0) {
+        *toSkip = 1;
+        return 0;
     }
-    // TODO: controllare se il confronto tra il mio id e il target id è corretto
 
+    for (node_t *iter = head; iter != NULL && *toSkip == 0; iter = iter->next) {
+        char *s = strdup(strtok(iter->id, "_")); // Do a copy, because strtok() removes delimiter permanently on the variable
+
+        if ((memcmp(s, target_id, sizeof(target_id)) == 0)) {
+            memcpy(previousSender, positiveSender, sizeof(struct sockaddr_in));
+            return 1;
+        }
+    }
     return 0;
 }
 
 void printList() {
-    int idx;
-    char* s_copy;
-    printf("Id generati:\n");
-    printMyId(head);
+    int k = 0;
+    int choice;
+    char *s_copy;
+    printf("\nId generated:\n");
 
-    printf("Inserisci l'indice relativo all'id\n");
-    scanf("%d", &idx);
+    int j = printMyId();
 
+    do {
+        printf("\nInsert an index\n");
+        scanf("%d", &choice);
+    } while (choice < 0 || choice >= j);
 
     node_t *iter = head;
-    for (int i = 0; i < idx; i++)
+    for (int i = 0; i < choice; i++)
         iter = iter->next;
 
-    if (iter->neigh_ids) {
-        s_copy = malloc(sizeof (iter->neigh_ids));
-        strcpy(s_copy, iter->neigh_ids);
+    if (iter->neigh_ids) { // Iterates on the neighbours id
+        s_copy = strdup(iter->neigh_ids);
 
-        int i = 0;
-
-        for (char *p = strtok(s_copy, "_"); p != NULL; p = strtok(NULL, "_"), i++) {
-            puts(p);
+        printf("\n");
+        for (char *p = strtok(s_copy, "_"); p != NULL; p = strtok(NULL, "_"), k++) {
+            printf("[N%d]: %s\n", k, p);
         }
+
         free(s_copy);
 
-    } else {
-        puts("You have not been in touch with other peer\n");
     }
-
-
+    if (k == 0) {
+        puts("You have not been in touch with another peer yet\n");
+    }
 }
 
-void printMyId(node_t *head) {
+
+int printMyId() {
     int i = 0;
     for (node_t *tmp = head; tmp != NULL; tmp = tmp->next, i++)
-        printf("[Id %d]: %.*s\n", i, ID_LEN-2, tmp->id);
+        printf("[Id %d]: %.*s\n", i, ID_LEN - 2, tmp->id);
+    return i;
 }

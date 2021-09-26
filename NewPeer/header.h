@@ -9,56 +9,43 @@
 
 #define MSG_UP 2
 #define CHK_MSG_UP 3
-#define MSG_DOWN 4
 #define MSG_ALL 5
 #define ACK_MSG_ALL 6
 #define MSG_BRD 7
-#define MSG_GET_NEIGH 8
 #define MSG_CONN 9
 #define ACK_CONN 10
+#define MSG_POS 11
 
 #define SRV_PORT 8500
 #define BROAD_PORT 9000
-#define NEIGH_NO 2
 
 #define ID_LEN 66
 
 typedef int msg_type_t;
 
-typedef struct node{
-    char *id;
+typedef struct node {
+    int no_cont;
+    char id[ID_LEN + 1];
     char *neigh_ids;
     struct node *next;
 } node_t;
 
-node_t* head;
-node_t* tail;
-
+extern node_t *head;
+extern node_t *tail;
 
 typedef struct {
     msg_type_t msg;
-} msg_ack_t;
-
-
-typedef struct
-{
-    msg_type_t msg;           // = MSG_PEER
     struct sockaddr_in peer_sock_addr;
+    struct sockaddr_in check_pos_addr;
 } msg_peer_t;
 
 typedef struct {
     msg_type_t msg;
-    char id[ID_LEN];
-}msg_neigh_id_t;
-
-typedef struct
-{
-    msg_type_t msg;
-    char *ids; // Array of ids
-} msg_brd_t;
+    char id[ID_LEN + 1];
+} msg_neigh_id_t;
 
 typedef struct {
     msg_type_t msg;
     int noPeer;
-}msg_num_all_t;
+} msg_num_all_t;
 #endif //NEWPEER_HEADER_H

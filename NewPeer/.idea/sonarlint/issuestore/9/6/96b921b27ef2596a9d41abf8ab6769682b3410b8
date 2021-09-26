@@ -1,0 +1,13 @@
+
+c:S5278D"e'memcmp' call operates on objects of type 'char' while the size is based on a different type 'char *'(¦ÿåƒ8ÓèÀÌÁ/
+ec:S9952"SMake this parameter a pointer-to-const. The current type of "neigh_id" is "char *".(¾†¥
+kc:S9959"TMake this parameter a pointer-to-const. The current type of "target_id" is "char *".(àã·…ÿÿÿÿÿ
+~c:S9959"gMake this parameter a pointer-to-const. The current type of "positiveSender" is "struct sockaddr_in *".(àã·…ÿÿÿÿÿ
+ec:S5000<"RCompare member by member to check object equality, "sockaddr_in" contains padding.(¼óßú
+4c:S1110D"!Remove these useless parentheses.(¦ÿåƒ
+jc:S5350B"WMake the type of this variable a pointer-to-const. The current type of "s" is "char *".(†ßìØ
+sc:NonReentrantFunctionB"QReplace this call to the non reentrant function "strtok" by a call to "strtok_r".(†ßìØ
+sc:NonReentrantFunctiona"QReplace this call to the non reentrant function "strtok" by a call to "strtok_r".(ˆÿœÖ
+sc:NonReentrantFunctiona"QReplace this call to the non reentrant function "strtok" by a call to "strtok_r".(ˆÿœÖ
+Ec:S5488"2Call to 'malloc' has an allocation size of 0 bytes(ÉÿÜ
+Bc:S3584A"*Potential leak of memory pointed to by 's'(ŒäÎİûÿÿÿÿ

@@ -1,1 +1,0 @@
-/usr/bin/cc  -pthread -g CMakeFiles/NewServer.dir/main.c.o CMakeFiles/NewServer.dir/server.c.o -o NewServer 

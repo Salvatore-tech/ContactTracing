@@ -1,0 +1,1 @@
+/usr/bin/cc  -pthread -O3 -DNDEBUG CMakeFiles/Server.dir/main.c.o CMakeFiles/Server.dir/server.c.o -o Server 

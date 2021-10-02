@@ -1,0 +1,3 @@
+/home/saso/CLionProjects/Server/cmake-build-release/CMakeFiles/rebuild_cache.dir
+/home/saso/CLionProjects/Server/cmake-build-release/CMakeFiles/edit_cache.dir
+/home/saso/CLionProjects/Server/cmake-build-release/CMakeFiles/Server.dir

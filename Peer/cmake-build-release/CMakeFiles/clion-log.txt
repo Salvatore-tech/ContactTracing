@@ -1,0 +1,4 @@
+/snap/clion/164/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/saso/CLionProjects/Peer
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/saso/CLionProjects/Peer/cmake-build-release

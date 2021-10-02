@@ -1,22 +1,0 @@
-
-R	cpp:S5028
-"8Replace this macro by "const", "constexpr" or an "enum".(¥œı±üÿÿÿÿ
-L	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(¿ü·
-M	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(½Ö¯Ú
-M	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(ÁĞñ¨
-R	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(³Ó¾©úÿÿÿÿ
-M	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(–Ê‡ã
-R	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(ûÁ¯İüÿÿÿÿ
-M	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(õ¢²¡
-M	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(ÎùÛ£
-R	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(¯ª‹–ûÿÿÿÿ
-R	cpp:S5028"8Replace this macro by "const", "constexpr" or an "enum".(—“ëıÿÿÿÿ
-U	cpp:S5416";"using" should be preferred to "typedef" for type aliasing.(–Ÿ¡ùÿÿÿÿ
-G	cpp:S5945"2Use "std::string" instead of a C-style char array.(¯£­Ö
-U	cpp:S5416";"using" should be preferred to "typedef" for type aliasing.(ë¡—‹úÿÿÿÿ
-C	cpp:S5421!".Global Pointer should be const at every level.(â‚”®
-H	cpp:S5421"".Global Pointer should be const at every level.(ÏÛóüÿÿÿÿ
-U	cpp:S5416$";"using" should be preferred to "typedef" for type aliasing.(Òº¾“üÿÿÿÿ
-G	cpp:S5945,"2Use "std::string" instead of a C-style char array.(¯£­Ö
-U	cpp:S5416*";"using" should be preferred to "typedef" for type aliasing.(Òº¾“üÿÿÿÿ
-U	cpp:S5416/";"using" should be preferred to "typedef" for type aliasing.(Òº¾“üÿÿÿÿ

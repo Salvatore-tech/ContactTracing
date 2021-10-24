@@ -18,3 +18,7 @@ Al lancio dei peer, come precedentemente illustrato, essi invieranno un messaggi
 dei peer.
 Quest'ultimi resteranno in attesa di un input da parte dell'utente che dovrà
 inserire una delle opzioni mostrate dal menù di scelta.
+
+## Credits
+- pizza11x
+- antoniocolucci

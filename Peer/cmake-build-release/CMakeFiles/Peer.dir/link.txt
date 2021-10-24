@@ -1,1 +1,0 @@
-/usr/bin/cc  -pthread -O3 -DNDEBUG CMakeFiles/Peer.dir/main.c.o CMakeFiles/Peer.dir/peer.c.o CMakeFiles/Peer.dir/ds_peer.c.o -o Peer 
